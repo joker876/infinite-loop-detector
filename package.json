@@ -2,7 +2,7 @@
     "name": "infinite-loop-detector",
     "version": "2.0.0",
     "description": "A utility library for detecting infinite loops in user-provided code.",
-    "main": "src/index.js",
+    "main": "dist/index.js",
     "scripts": {
         "test": "npm run build && npx jasmine",
         "start": "ts-node-dev --respawn src/index.ts",
