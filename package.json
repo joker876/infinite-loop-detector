@@ -1,6 +1,6 @@
 {
     "name": "infinite-loop-detector",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A utility library for detecting infinite loops in user-provided code.",
     "main": "src/index.js",
     "scripts": {
