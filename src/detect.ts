@@ -11,6 +11,14 @@ export function detectInfiniteLoop(id: number): boolean {
     loopObjectCollection[id] = new InfiniteLoopDetectionHost(id);
     return false;
 }
+declare global {
+    interface Window {
+        detectInfiniteLoop(id: number): boolean
+    }
+}
+export function addDetectionOnWindowObject(): void {
+    window.detectInfiniteLoop = detectInfiniteLoop;
+}
 
 class InfiniteLoopDetectionHost {
     readonly identifier!: number;

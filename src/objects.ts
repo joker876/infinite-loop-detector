@@ -15,8 +15,16 @@ export function detectInfiniteLoopObject(id: number, line: number, column: numbe
         test: {
             type: "CallExpression",
             callee: {
-                type: "Identifier",
-                name: "detectInfiniteLoop"
+                type: "MemberExpression",
+                computed: false,
+                object: {
+                    type: "Identifier",
+                    name: "window"
+                },
+                property: {
+                    type: "Identifier",
+                    name: "detectInfiniteLoop"
+                }
             },
             arguments: [
                 {
