@@ -1,4 +1,4 @@
-import { Directive, Statement, ModuleDeclaration, BlockStatement, IfStatement } from 'estree';
+import { IfStatement } from 'estree';
 
 export function detectInfiniteLoopObject(id: number, line: number, column: number): IfStatement {
     return {

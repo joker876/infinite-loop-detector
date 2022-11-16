@@ -1,6 +1,6 @@
-import { parseScript, ParseOptions } from 'esprima';
-import { Directive, Statement, ModuleDeclaration, BlockStatement } from 'estree';
 import escodegen from 'escodegen';
+import { parseScript } from 'esprima';
+import { BlockStatement, Directive, ModuleDeclaration, Statement } from 'estree';
 import { clearAllInfiniteLoopChecks } from './detect';
 import { detectInfiniteLoopObject } from './objects';
 
@@ -33,7 +33,3 @@ function checkObjectAndAddCheck(object: ASTNode) {
         (object.body as BlockStatement).body.unshift(objectToAdd);
     }
 }
-
-
-const code = `while(true){console.log('test');}`;
-console.log(addInfiniteLoopChecks(code));
