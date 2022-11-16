@@ -1,4 +1,13 @@
-import { IfStatement } from 'estree';
+import { IfStatement, BlockStatement, Statement } from 'estree';
+
+export function addBlockStatement(obj: Statement): BlockStatement {
+    return {
+        type: 'BlockStatement',
+        body: [
+            obj,
+        ]
+    }
+}
 
 export function detectInfiniteLoopObject(id: number, line: number, column: number): IfStatement {
     return {

@@ -1,14 +1,15 @@
 let loopObjectCollection: { [id: number]: InfiniteLoopDetectionHost } = {};
 
-export function clearAllInfiniteLoopChecks() {
+export function clearAllInfiniteLoopChecks(): void {
     loopObjectCollection = {};
 }
-export function detectInfiniteLoop(id: number) {
+export function detectInfiniteLoop(id: number): boolean {
     const loopObj = loopObjectCollection[id];
     if (loopObj) {
         return loopObj.shouldStopExecution();
     }
     loopObjectCollection[id] = new InfiniteLoopDetectionHost(id);
+    return false;
 }
 
 class InfiniteLoopDetectionHost {
